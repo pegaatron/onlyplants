@@ -40,7 +40,8 @@ module.exports = {
 
   // get User profile info to display
   getUserProfile: (req, res) => {
-    model.getUserProfile(req.body.email.toLowerCase())
+    var info = req.body.email || req.params.email || req.query.email;
+    model.getUserProfile(info.toLowerCase())
     .then((data) => {res.send(data).status(200)})
     .catch((err) => res.sendStatus(404));
   },

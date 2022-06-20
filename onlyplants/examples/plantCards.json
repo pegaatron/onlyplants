@@ -119,5 +119,16 @@
     "sun": 4,
     "difficulty": 2,
     "imgUrl": "https://unsplash.com/photos/4PMVNJeI3XU?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
+  },
+  {
+    "username": "pegaatron",
+    "email": "peggy@gmail.com",
+    "plant_type": "drosera sundew",
+    "about": "my child had babies and i'm here to give them away",
+    "location": "LA",
+    "water": 3,
+    "sun": 3,
+    "difficulty": 2,
+    "imgUrl": "https://unsplash.com/photos/IZz3sboy1g8?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
   }
 ]
