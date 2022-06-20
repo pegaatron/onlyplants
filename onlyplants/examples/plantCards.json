@@ -1,0 +1,123 @@
+[
+  {
+    "username": "megamind",
+    "email": "megamind@gmail.com",
+    "plant_type": "Pothos",
+    "about": "beginner friendly plant for those looking to start their green thumbs",
+    "location": "Bay Area",
+    "water": 3,
+    "sun": 4,
+    "difficulty": 2,
+    "imgUrl": "https://unsplash.com/photos/IZz3sboy1g8?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
+  },
+  {
+    "username": "ratman",
+    "email": "ratman@gmail.com",
+    "plant_type": "Snek Plant",
+    "about": "this plant is literally immortal",
+    "location": "Bay Area",
+    "water": 2,
+    "sun": 2,
+    "difficulty": 1,
+    "imgUrl": "https://unsplash.com/photos/nvo7jmzDDew?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
+  },
+  {
+    "username": "possumgirl",
+    "email": "possumgirl@gmail.com",
+    "plant_type": "Succulent",
+    "about": "perfect for those with commitment issues <3",
+    "location": "Sun Diego",
+    "water": 1,
+    "sun": 5,
+    "difficulty": 2,
+    "imgUrl": "https://unsplash.com/photos/gsCecg8nrAY?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
+  },
+  {
+    "username": "michael jackson",
+    "email": "mcjackson@gmail.com",
+    "plant_type": "plant",
+    "about": "very pretty plant but lw hard to keep alive",
+    "location": "Arizona",
+    "water": 3,
+    "sun": 2,
+    "difficulty": 4,
+    "imgUrl": "https://unsplash.com/photos/bBiuSdck8tU?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
+  },
+  {
+    "username": "notJB",
+    "email": "notJB@gmail.com",
+    "plant_type": "monstera",
+    "about": "big green leaves to stimulate living in the jungle",
+    "location": "Vietnam",
+    "water": 4,
+    "sun": 4,
+    "difficulty": 3,
+    "imgUrl": "https://unsplash.com/photos/W5XTTLpk1-I?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
+  },
+  {
+    "username": "billy",
+    "email": "billyj@gmail.com",
+    "plant_type": "monstera",
+    "about": "LF@@@@@@@@@@@@@@@ lemon tree to trade with my monstera",
+    "location": "San Francisco",
+    "water": 3,
+    "sun": 4,
+    "difficulty": 4,
+    "imgUrl": "https://unsplash.com/photos/bwsTJMnhcwE?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
+  },
+  {
+    "username": "jojo siwa",
+    "email": "jojoSiwa@gmail.com",
+    "plant_type": "chinese money plant",
+    "about": "have an excess of these, looking to trade for another plant",
+    "location": "Bay Area",
+    "water": 3,
+    "sun": 2,
+    "difficulty": 3,
+    "imgUrl": "https://unsplash.com/photos/2i5ZX7Fid4M?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
+  },
+  {
+    "username": "love quinn",
+    "email": "loveQuinn@gmail.com",
+    "plant_type": "love string plant",
+    "about": "my plant propagated and I'm giving out free cuts :)",
+    "location": "Norway",
+    "water": 4,
+    "sun": 3,
+    "difficulty": 4,
+    "imgUrl": "https://unsplash.com/photos/2i5ZX7Fid4M?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
+  },
+  {
+    "username": "Mr.Worldwide",
+    "email": "pitbull@gmail.com",
+    "plant_type": "cactus",
+    "about": "been travelling too much, cant take care of my cactus. up for grabs by anyone interested",
+    "location": "Latin America",
+    "water": 1,
+    "sun": 5,
+    "difficulty": 1,
+    "imgUrl": "https://unsplash.com/photos/2i5ZX7Fid4M?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
+  },
+  {
+    "username": "Trisha",
+    "email": "banana@gmail.com",
+    "plant_type": "plant",
+    "about": "garden is overgrown and I'm looking to trade some of these for somehting else",
+    "location": "New York",
+    "water": 2,
+    "sun": 3,
+    "difficulty": 2,
+    "imgUrl": "https://unsplash.com/photos/4PMVNJeI3XU?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
+  },
+   {
+    "username": "mica",
+    "email": "micaca@gmail.com",
+    "plant_type": "rubber plant",
+    "about": "looking to rehome this plant because my cat hates it :/",
+    "location": "Canada",
+    "water": 3,
+    "sun": 4,
+    "difficulty": 2,
+    "imgUrl": "https://unsplash.com/photos/4PMVNJeI3XU?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"
+  }
+]
