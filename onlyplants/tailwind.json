@@ -4,6 +4,26 @@
 			"height": "100%"
 		}
 	},
+	"h-10": {
+		"style": {
+			"height": 40
+		}
+	},
+	"w-10": {
+		"style": {
+			"width": 40
+		}
+	},
+	"h-96": {
+		"style": {
+			"height": 384
+		}
+	},
+	"w-96": {
+		"style": {
+			"width": 384
+		}
+	},
 	"flex": {
 		"style": {
 			"display": "flex"
@@ -81,7 +101,7 @@
 	},
 	"profile-card": {
 		"style": {
-			"width": "auto",
+			"width": "80%",
 			"height": "80%",
 			"paddingTop": "2%",
 			"paddingRight": "5%",
@@ -100,8 +120,19 @@
 	},
 	"pfp": {
 		"style": {
-			"width": 200,
-			"height": 200
+			"borderTopLeftRadius": "50%",
+			"borderTopRightRadius": "50%",
+			"borderBottomRightRadius": "50%",
+			"borderBottomLeftRadius": "50%",
+			"width": 250
+		}
+	},
+	"circle": {
+		"style": {
+			"borderTopLeftRadius": "50%",
+			"borderTopRightRadius": "50%",
+			"borderBottomRightRadius": "50%",
+			"borderBottomLeftRadius": "50%"
 		}
 	},
 	"flex-column": {
@@ -111,7 +142,7 @@
 	},
 	"flex-spacebtwn": {
 		"style": {
-			"justifyContent": "flex-start"
+			"justifyContent": "space-between"
 		}
 	}
 }

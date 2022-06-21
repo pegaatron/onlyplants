@@ -3,6 +3,22 @@
   height: 100%
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
+.w-10 {
+  width: 2.5rem;
+}
+
+.h-96 {
+  height: 24rem;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
 
 
 .flex {
@@ -64,7 +80,6 @@
   padding: 5%;
   padding-top: 2%;
   margin-top: 10%;
-  box-shadow: 0 4px 6px -1px;
 }
 
 .profile-content {

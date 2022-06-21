@@ -22,7 +22,7 @@ const Swipe = () => {
       {/* CardContainer */}
       <View>
         <TouchableOpacity>
-          <Image style={tw('h-10 w-10')}source={{uri: imgUrl}}/>
+          <Image style={tw('h-10 w-10 rounded-full')}source={{uri: imgUrl}}/>
         </TouchableOpacity>
         {/* Card */}
         <View>
