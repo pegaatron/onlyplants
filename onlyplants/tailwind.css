@@ -3,6 +3,8 @@
   height: 100%
 }
 
+
+
 .flex {
   display: flex
 }
@@ -58,7 +60,30 @@
 
 .profile-card {
   width: 80%;
-  height: 70%;
-  padding: 20%;
+  height: 80%;
+  padding: 5%;
+  padding-top: 2%;
   margin-top: 10%;
+  box-shadow: 0 4px 6px -1px;
+}
+
+.profile-content {
+  padding: 10px;
+}
+
+.pfp {
+  border-radius: 50%;
+  width: 250px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-spacebtwn {
+  justify-content: space-between;
 }

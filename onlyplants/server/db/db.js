@@ -31,7 +31,8 @@ const PlantCardSchema = new mongoose.Schema({
 
 const userSchema = new mongoose.Schema({
   email: String,
-  password: String
+  password: String,
+  profileImg: String
 })
 
 const LikedCardSchema = new mongoose.Schema({
