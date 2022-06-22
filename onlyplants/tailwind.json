@@ -139,7 +139,11 @@
 			"paddingRight": 24
 		}
 	},
-
+	"py-top-1": {
+		"style": {
+			"paddingTop": 4
+		}
+	},
 	"py-1": {
 		"style": {
 			"paddingTop": 4,

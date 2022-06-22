@@ -1,11 +1,12 @@
-import { React, useEffect, useState } from 'react';
-import { SafeAreaView, Text, View, TouchableOpacity, Image, Button } from 'react-native';
+import { React, useEffect, useRef } from 'react';
+import { SafeAreaView, Text, View, TouchableOpacity, Image, Button, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 import useAuth from '../../../customHooks/useAuth.jsx';
 import useAxiosGet from '../../../customHooks/useAxiosGet.jsx';
 import { useTailwind } from 'tailwind-rn';
 import { Ionicons } from '@expo/vector-icons';
 import Swiper from 'react-native-deck-swiper';
+import axios from 'axios';
 
 
 const Swipe = () => {
@@ -37,6 +38,32 @@ const Swipe = () => {
           stackSize={5}
           animateCardOpacity
           verticalSwipe={false}
+          overlayLabels={{
+            left: {
+              title: 'nope',
+              style: {
+                label: {
+                  textAlign: "right",
+                  color: "red"
+                },
+              }
+            },
+            right: {
+              title: 'match',
+              style: {
+                label: {
+                  textAlign: "left",
+                  color: "#73a05c"
+                },
+              }
+            }
+          }}
+          onSwipedRight={() => {
+            axios.get('')
+            // get request to see if this user matched me yet
+            // if data ! null, display matched screen
+            // else post request to add match to the system
+          }}
           renderCard={card => (
             <View style={tw('relative bg-green-400 h-3/4 rounded-xl')}>
               <Image
@@ -44,10 +71,10 @@ const Swipe = () => {
                 source={{uri: card.imgUrl}}
               />
               {/* whiteText */}
-              <View style={tw('bottom bg-white w-full h-24 rounded-b-xl justify-between py-2 px-6')}>
+              <View style={[tw('bottom bg-white w-full h-24 rounded-b-xl justify-between py-2 px-6')]}>
                 <View>
-                  <View style={tw('flex-row')}>
-                    <View>
+                  <View style={tw('flex-row items-center')}>
+                    <View style={tw('py-top-1')}>
                       <Image
                         style={tw('h-10 w-10 rounded-full')}
                         source={{uri: card.profilePic}}/>
@@ -56,10 +83,6 @@ const Swipe = () => {
                       <Text style={tw('text-xl font-bold')}>{card.plant_type}</Text>
                       <Text>@{card.username}</Text>
                     </View>
-                  </View>
-                  <View style={tw('flex flex-row justify-around')}>
-                    <Button title='No'></Button>
-                    <Button title='Yes'></Button>
                   </View>
                 </View>
               </View>
@@ -73,4 +96,4 @@ const Swipe = () => {
   )
 }
 
-export default Swipe
+export default Swipe;

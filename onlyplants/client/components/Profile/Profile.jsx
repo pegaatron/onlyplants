@@ -23,7 +23,6 @@ const Profile = () => {
 
 
   useEffect(() => {
-    console.log(data)
     if (data !== null) {
       setAbout(data[0].about);
       setDiff(data[0].difficulty);
@@ -39,7 +38,7 @@ const Profile = () => {
   return ( isLoading ?
     null
     :<View style={tw('flex flex-one items-center')}>
-      <View style={tw('flex border-round profile-card flex-column items-center')}>
+      <View style={tw('flex border-round profile-card flex-column items-center bg-white')}>
         <View>
           <Image source={image}
            resizeMode="cover"
