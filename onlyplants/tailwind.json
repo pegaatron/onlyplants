@@ -24,6 +24,11 @@
 			"height": "75%"
 		}
 	},
+	"h-50": {
+		"style": {
+			"height": 200
+		}
+	},
 	"w-10": {
 		"style": {
 			"width": 40
@@ -52,6 +57,11 @@
 	"h-64": {
 		"style": {
 			"height": 256
+		}
+	},
+	"w-50": {
+		"style": {
+			"width": 200
 		}
 	},
 	"w-64": {
@@ -111,6 +121,11 @@
 			"alignItems": "center"
 		}
 	},
+	"round-border": {
+		"style": {
+			"border": "solid white"
+		}
+	},
 	"rounded-full": {
 		"style": {
 			"borderTopLeftRadius": 9999,
@@ -152,6 +167,11 @@
 			"paddingRight": 12
 		}
 	},
+	"p-3": {
+		"style": {
+			"padding": 12
+		}
+	},
 	"px-5": {
 		"style": {
 			"paddingLeft": 20,
@@ -179,6 +199,11 @@
 		"style": {
 			"paddingTop": 8,
 			"paddingBottom": 8
+		}
+	},
+	"py-top-5": {
+		"style": {
+			"paddingTop": 40
 		}
 	},
 	"py-top-10": {
@@ -314,6 +339,12 @@
 	"opacity-80": {
 		"style": {
 			"opacity": 0.8
+		}
+	},
+	"chat-btn": {
+		"style": {
+			"border": "solid white",
+			"background": "#648b50"
 		}
 	},
 	"*": {

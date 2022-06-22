@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Button } from 'react-native';
 import useAuth from '../../../customHooks/useAuth.jsx';
 import { useTailwind } from 'tailwind-rn';
 import useAxiosGet from '../../../customHooks/useAxiosGet.jsx';
@@ -33,11 +33,20 @@ const Modal = (props) => {
         {/* UserPlantPhotos */}
         <View style={tw('flex flex-row justify-evenly w-full py-top-10')}>
           <Image
-          style={tw('h-64 w-64 rounded-full px-6')}
+          style={tw('h-50 w-50 rounded-full px-6 round-border')}
           source={{uri: userInfo.imgUrl}}/>
           <Image
-          style={tw('h-64 w-64 rounded-full px-6')}
+          style={tw('h-50 w-50 rounded-full px-6 round-border')}
           source={{uri: userInfo.imgUrl}}/>
+        </View>
+        {/* Chat Button */}
+        <View style={tw('py-top-5')}>
+          <View>
+            <Text style={tw('match-logo')}>Send a message</Text>
+          </View>
+          <TouchableOpacity style={tw('flex items-center py-top-5')}>
+            <Text style={tw('match-logo chat-btn p-3')}>Chat Now</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
