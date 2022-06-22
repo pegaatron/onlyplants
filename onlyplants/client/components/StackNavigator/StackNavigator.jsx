@@ -1,6 +1,8 @@
 import { React } from 'react';
 import { View, Text } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {TailwindProvider} from 'tailwind-rn';
+import utilities from '../../../tailwind.json';
 import useAuth from '../../../customHooks/useAuth.jsx';
 import Home from './Home.jsx';
 import Chat from '../Chat/Chat.jsx';
@@ -15,6 +17,7 @@ const StackNavigator = () => {
   const { user } = useAuth();
 
   return (
+    <TailwindProvider utilities={utilities}>
       <Stack.Navigator
       screenOptions={{
         headerShown: false
@@ -29,6 +32,7 @@ const StackNavigator = () => {
         :<Stack.Screen name="Login" component={Login} />
         }
       </Stack.Navigator>
+    </TailwindProvider>
   )
 }
 

@@ -5,7 +5,7 @@ import useAuth from '../../../customHooks/useAuth.jsx';
 import useAxiosGet from '../../../customHooks/useAxiosGet.jsx';
 import { useTailwind } from 'tailwind-rn';
 import { Ionicons } from '@expo/vector-icons';
-// import Swiper from 'react-native-deck-swiper';
+import Swiper from 'react-native-deck-swiper';
 
 
 const Swipe = () => {
@@ -18,14 +18,13 @@ const Swipe = () => {
 
   // useEffect(() => {
   //   console.log(data);
-  //   console.log('user:', user)
   // },[data])
 
 
-  return (
+  return ( data ?
     <SafeAreaView>
       {/* Header */}
-      <View style={tw('flex-row items-center justify-between w-full')}>
+      <View style={tw('flex-row items-center justify-between w-full px-5')}>
         <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
           <Image style={tw('h-10 w-10 rounded-full')}source={{uri: imgUrl}}/>
         </TouchableOpacity>
@@ -36,10 +35,20 @@ const Swipe = () => {
           <Ionicons name="chatbubbles" size={32} color="#9bbb8a" />
         </TouchableOpacity>
       </View>
-      {/* End of Header */}
       {/* Swiper */}
+      <View style={tw('flex-1')}>
+        <Swiper cards={data}
+          containerStyle={{backgroundColor: 'transparent'}}
+          renderCard={card => (
+            <View style={tw('bg-green-400 h-3/4 rounded-xl')}>
+              <Text>{card.username}</Text>
+            </View>
+            )}
+        />
+      </View>
 
     </SafeAreaView>
+    : null
   )
 }
 
