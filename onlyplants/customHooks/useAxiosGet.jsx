@@ -9,7 +9,7 @@ function useAxiosGet(endpoint, params) {
   const fetchData = (endpoint, params) => {
     axios.get(`http://localhost:3001${endpoint}`, params)
     .then((data) => {
-      setData(data.data[0])
+      setData(data.data)
     })
     .catch((err) => setError(err))
     .finally(() => setLoading(false));

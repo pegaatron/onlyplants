@@ -24,21 +24,21 @@ const Profile = () => {
 
   useEffect(() => {
     if (data !== null) {
-      setAbout(data.about);
-      setDiff(data.difficulty);
-      setWater(data.water);
-      setSun(data.sun);
-      setLoc(data.location);
-      setImg(data.imgUrl);
-      setName(data.username);
-      setType(data.plant_type);
+      setAbout(data[0].about);
+      setDiff(data[0].difficulty);
+      setWater(data[0].water);
+      setSun(data[0].sun);
+      setLoc(data[0].location);
+      setImg(data[0].imgUrl);
+      setName(data[0].username);
+      setType(data[0].plant_type);
     }
   }, [data])
 
   return ( isLoading ?
     null
     :<View style={tw('flex flex-one items-center')}>
-      <View style={tw('flex flex-spacebtwn border-round profile-card flex-column items-center')}>
+      <View style={tw('flex border-round profile-card flex-column items-center')}>
         <View>
           <Image source={image}
            resizeMode="cover"

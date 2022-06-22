@@ -14,6 +14,21 @@
 			"width": 40
 		}
 	},
+	"w-full": {
+		"style": {
+			"width": "100%"
+		}
+	},
+	"h-14": {
+		"style": {
+			"height": 56
+		}
+	},
+	"w-14": {
+		"style": {
+			"width": 56
+		}
+	},
 	"h-96": {
 		"style": {
 			"height": 384
@@ -22,6 +37,26 @@
 	"w-96": {
 		"style": {
 			"width": 384
+		}
+	},
+	"left-5": {
+		"style": {
+			"left": 20
+		}
+	},
+	"top-3": {
+		"style": {
+			"top": 12
+		}
+	},
+	"absolute": {
+		"style": {
+			"position": "absolute"
+		}
+	},
+	"relative": {
+		"style": {
+			"position": "relative"
 		}
 	},
 	"flex": {
@@ -140,9 +175,58 @@
 			"flexDirection": "column"
 		}
 	},
-	"flex-spacebtwn": {
+	"flex-row": {
+		"style": {
+			"flexDirection": "row"
+		}
+	},
+	"justify-between": {
 		"style": {
 			"justifyContent": "space-between"
+		}
+	},
+	"*": {
+		"style": {
+			"--tw-border-spacing-x": 0,
+			"--tw-border-spacing-y": 0,
+			"--tw-ordinal": "",
+			"--tw-slashed-zero": "",
+			"--tw-numeric-figure": "",
+			"--tw-numeric-spacing": "",
+			"--tw-numeric-fraction": ""
+		}
+	},
+	"::before": {
+		"style": {
+			"--tw-border-spacing-x": 0,
+			"--tw-border-spacing-y": 0,
+			"--tw-ordinal": "",
+			"--tw-slashed-zero": "",
+			"--tw-numeric-figure": "",
+			"--tw-numeric-spacing": "",
+			"--tw-numeric-fraction": ""
+		}
+	},
+	"::after": {
+		"style": {
+			"--tw-border-spacing-x": 0,
+			"--tw-border-spacing-y": 0,
+			"--tw-ordinal": "",
+			"--tw-slashed-zero": "",
+			"--tw-numeric-figure": "",
+			"--tw-numeric-spacing": "",
+			"--tw-numeric-fraction": ""
+		}
+	},
+	"::backdrop": {
+		"style": {
+			"--tw-border-spacing-x": 0,
+			"--tw-border-spacing-y": 0,
+			"--tw-ordinal": "",
+			"--tw-slashed-zero": "",
+			"--tw-numeric-figure": "",
+			"--tw-numeric-spacing": "",
+			"--tw-numeric-fraction": ""
 		}
 	}
 }

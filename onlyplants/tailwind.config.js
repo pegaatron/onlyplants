@@ -1,5 +1,5 @@
 module.exports = {
-  content: [],
+  content: ["./onlyplants/**/*.{html,js}"],
   theme: {
     extend: {},
   },

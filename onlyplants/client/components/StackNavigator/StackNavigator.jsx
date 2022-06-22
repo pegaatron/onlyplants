@@ -21,9 +21,9 @@ const StackNavigator = () => {
       }}>
         {user ?
         <>
-          <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Swipe" component={Swipe} />
           <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Chat" component={Chat} />
         </>
         :<Stack.Screen name="Login" component={Login} />
