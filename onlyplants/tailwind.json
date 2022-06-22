@@ -9,6 +9,11 @@
 			"height": 40
 		}
 	},
+	"h-24": {
+		"style": {
+			"height": 96
+		}
+	},
 	"h-3/4": {
 		"style": {
 			"height": "75%"
@@ -81,6 +86,11 @@
 			"justifyContent": "center"
 		}
 	},
+	"justify-around": {
+		"style": {
+			"justifyContent": "space-around"
+		}
+	},
 	"items-center": {
 		"style": {
 			"alignItems": "center"
@@ -100,17 +110,33 @@
 			"backgroundColor": "rgb(191 219 254 / var(--tw-bg-opacity))"
 		}
 	},
+	"bg-white": {
+		"style": {
+			"backgroundColor": "white"
+		}
+	},
+	"bottom": {
+		"style": {
+			"position": "absolute",
+			"bottom": 0
+		}
+	},
 	"px-3": {
 		"style": {
 			"paddingLeft": 12,
 			"paddingRight": 12
 		}
 	},
-
 	"px-5": {
 		"style": {
 			"paddingLeft": 20,
 			"paddingRight": 20
+		}
+	},
+	"px-6": {
+		"style": {
+			"paddingLeft": 24,
+			"paddingRight": 24
 		}
 	},
 
@@ -118,6 +144,12 @@
 		"style": {
 			"paddingTop": 4,
 			"paddingBottom": 4
+		}
+	},
+	"py-2": {
+		"style": {
+			"paddingTop": 8,
+			"paddingBottom": 8
 		}
 	},
 	"pt-12": {
@@ -203,6 +235,12 @@
 			"borderRadius": 12
 		}
 	},
+	"rounded-b-xl": {
+		"style": {
+			"borderBottomLeftRadius": 12,
+			"borderBottomRightRadius": 12
+		}
+	},
 	"justify-between": {
 		"style": {
 			"justifyContent": "space-between"
@@ -211,6 +249,17 @@
 	"bg-green-400": {
 		"style": {
 			"backgroundColor": "#9bbb8a"
+		}
+	},
+	"text-xl": {
+		"style": {
+			"fontSize": 20,
+			"lineHeight": 28
+		}
+	},
+	"font-bold": {
+		"style": {
+			"fontWeight": "700"
 		}
 	},
 	"*": {

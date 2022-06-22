@@ -1,4 +1,4 @@
-import { React } from 'react';
+import { React, useEffect } from 'react';
 import { View, Text } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {TailwindProvider} from 'tailwind-rn';
@@ -26,8 +26,8 @@ const StackNavigator = () => {
         <>
           <Stack.Screen name="Swipe" component={Swipe} />
           <Stack.Screen name="Profile" component={Profile} />
-          <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Chat" component={Chat} />
+          <Stack.Screen name="Home" component={Home} />
         </>
         :<Stack.Screen name="Login" component={Login} />
         }

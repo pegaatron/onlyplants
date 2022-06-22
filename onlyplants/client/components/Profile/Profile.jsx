@@ -23,6 +23,7 @@ const Profile = () => {
 
 
   useEffect(() => {
+    console.log(data)
     if (data !== null) {
       setAbout(data[0].about);
       setDiff(data[0].difficulty);

@@ -51,7 +51,7 @@ module.exports = {
 
   // (Read) see avaialble matches
   getPlantCards: (req, res) => {
-    var user = req.body.email || 'null';
+    var user = req.body.email || req.params.email || req.query.email || 'null';
     model.getPlantCards(user.toLowerCase())
     .then((data) => {
       res.send(data).status(200);
