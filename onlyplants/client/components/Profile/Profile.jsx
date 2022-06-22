@@ -38,7 +38,7 @@ const Profile = () => {
   return ( isLoading ?
     null
     :<View style={tw('flex flex-one items-center')}>
-      <View style={tw('flex border-round profile-card flex-column items-center bg-white')}>
+      <View style={tw('flex rounded-xl profile-card flex-column items-center bg-white')}>
         <View>
           <Image source={image}
            resizeMode="cover"

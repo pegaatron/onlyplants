@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/core';
 import useAuth from '../../../customHooks/useAuth.jsx';
 import useAxiosGet from '../../../customHooks/useAxiosGet.jsx';
 import { useTailwind } from 'tailwind-rn';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, Entypo,  } from '@expo/vector-icons';
 import Swiper from 'react-native-deck-swiper';
 import axios from 'axios';
 
@@ -20,80 +20,92 @@ const Swipe = () => {
   return ( data ?
     <SafeAreaView>
       {/* Header */}
-      <View style={tw('flex-row items-center justify-between w-full px-5')}>
-        <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
-          <Image style={tw('h-10 w-10 rounded-full')}source={{uri: imgUrl}}/>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image style={tw('h-14 w-14')} source={require('./logo.png')}/>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('Chat')}>
-          <Ionicons name="chatbubbles" size={32} color="#9bbb8a" />
-        </TouchableOpacity>
-      </View>
-      {/* Swiper */}
-      <View style={tw('flex-1')}>
-        <Swiper cards={data}
-          containerStyle={{backgroundColor: 'transparent'}}
-          stackSize={5}
-          animateCardOpacity
-          verticalSwipe={false}
-          overlayLabels={{
-            left: {
-              title: 'nope',
-              style: {
-                label: {
-                  textAlign: "right",
-                  color: "red"
-                },
+      <View style={tw('h-full')}>
+        <View style={tw('flex-row items-center justify-between w-full px-5')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+            <Image style={tw('h-10 w-10 rounded-full')}source={{uri: imgUrl}}/>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Modal')}>
+            <Image style={tw('h-14 w-14')} source={require('./logo.png')}/>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Chat')}>
+            <Ionicons name="chatbubbles" size={32} color="#9bbb8a" />
+          </TouchableOpacity>
+        </View>
+
+        {/* Swipe Card*/}
+        <View>
+          <Swiper cards={data}
+            containerStyle={{backgroundColor: 'transparent'}}
+            stackSize={5}
+            animateCardOpacity
+            verticalSwipe={false}
+            overlayLabels={{
+              left: {
+                title: 'nope',
+                style: {
+                  label: {
+                    textAlign: "right",
+                    color: "red"
+                  },
+                }
+              },
+              right: {
+                title: 'match',
+                style: {
+                  label: {
+                    textAlign: "left",
+                    color: "#73a05c"
+                  },
+                }
               }
-            },
-            right: {
-              title: 'match',
-              style: {
-                label: {
-                  textAlign: "left",
-                  color: "#73a05c"
-                },
-              }
-            }
-          }}
-          onSwipedRight={() => {
-            axios.get('')
-            // get request to see if this user matched me yet
-            // if data ! null, display matched screen
-            // else post request to add match to the system
-          }}
-          renderCard={card => (
-            <View style={tw('relative bg-green-400 h-3/4 rounded-xl')}>
-              <Image
-                style={tw("absolute h-full w-full rounded-xl")}
-                source={{uri: card.imgUrl}}
-              />
-              {/* whiteText */}
-              <View style={[tw('bottom bg-white w-full h-24 rounded-b-xl justify-between py-2 px-6')]}>
-                <View>
-                  <View style={tw('flex-row items-center')}>
-                    <View style={tw('py-top-1')}>
-                      <Image
-                        style={tw('h-10 w-10 rounded-full')}
-                        source={{uri: card.profilePic}}/>
-                    </View>
-                    <View style={tw('px-3')}>
-                      <Text style={tw('text-xl font-bold')}>{card.plant_type}</Text>
-                      <Text>@{card.username}</Text>
+            }}
+            onSwipedRight={() => {
+              axios.get('')
+              // get request to see if this user matched me yet
+              // if data ! null, display matched screen
+              // else post request to add match to the system
+            }}
+            renderCard={card => (
+              <View style={tw('relative bg-green-400 h-3/4 rounded-xl')}>
+                <Image
+                  style={tw("absolute h-full w-full rounded-xl")}
+                  source={{uri: card.imgUrl}}
+                />
+                {/* whiteText */}
+                <View style={[tw('bottom bg-white w-full h-24 rounded-b-xl justify-between py-2 px-6')]}>
+                  <View>
+                    <View style={tw('flex-row items-center')}>
+                      <View style={tw('py-top-1')}>
+                        <Image
+                          style={tw('h-10 w-10 rounded-full')}
+                          source={{uri: card.profilePic}}/>
+                      </View>
+                      <View style={tw('px-3')}>
+                        <Text style={tw('text-xl font-bold')}>{card.plant_type}</Text>
+                        <Text>@{card.username}</Text>
+                      </View>
                     </View>
                   </View>
                 </View>
               </View>
-            </View>
-            )}
-        />
+              )}
+          />
+        </View>
       </View>
-
     </SafeAreaView>
     : null
   )
 }
 
 export default Swipe;
+
+// Like buttons for future implementation,, couldn't style it correctly lol
+          // <View style={tw('flex flex-row justify-evenly')}>
+          //   <TouchableOpacity style={tw('items-center justify-center rounded-full h-14 w-14 bg-red-200')}>
+          //     <Entypo name="cross" size={24} color="red" />
+          //   </TouchableOpacity>
+          //   <TouchableOpacity style={tw('items-center justify-center rounded-full h-14 w-14 bg-green-200')}>
+          //     <Entypo name="heart" size={24} color="green" />
+          //   </TouchableOpacity>
+          // </View>

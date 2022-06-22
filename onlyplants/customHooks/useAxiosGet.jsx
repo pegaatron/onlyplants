@@ -9,15 +9,16 @@ function useAxiosGet(endpoint, params) {
   const fetchData = (endpoint, params) => {
     axios.get(`http://localhost:3001${endpoint}`, params)
     .then((data) => {
-      setData(data.data)
+      setData(data.data);
     })
     .catch((err) => setError(err))
-    .finally(() => setLoading(false));
+    .finally(() => {setLoading(false)});
   }
 
   useEffect(() => {
+    console.log('running with endpoint: ', endpoint)
     fetchData(endpoint, params);
-  },[])
+  },[endpoint])
 
   return {data, error, isLoading}
 }

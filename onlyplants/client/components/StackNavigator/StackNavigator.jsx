@@ -9,6 +9,7 @@ import Chat from '../Chat/Chat.jsx';
 import Profile from '../Profile/Profile.jsx';
 import Swipe from '../Cards/Swipe.jsx';
 import Login from '../Login/Login.jsx';
+import Modal from '../Cards/Modal.jsx';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,10 +25,15 @@ const StackNavigator = () => {
       }}>
         {user ?
         <>
+        <Stack.Group screenOptions={{presentation: "modal"}}>
+          <Stack.Screen name='Modal' component={Modal}/>
+        </Stack.Group>
+        <Stack.Group>
           <Stack.Screen name="Swipe" component={Swipe} />
           <Stack.Screen name="Profile" component={Profile} />
           <Stack.Screen name="Chat" component={Chat} />
           <Stack.Screen name="Home" component={Home} />
+        </Stack.Group>
         </>
         :<Stack.Screen name="Login" component={Login} />
         }
