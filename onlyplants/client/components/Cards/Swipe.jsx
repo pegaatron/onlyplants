@@ -39,9 +39,15 @@ const Swipe = () => {
       <View style={tw('flex-1')}>
         <Swiper cards={data}
           containerStyle={{backgroundColor: 'transparent'}}
+          stackSize={5}
+          animateCardOpacity
+          verticalSwipe={false}
           renderCard={card => (
-            <View style={tw('bg-green-400 h-3/4 rounded-xl')}>
-              <Text>{card.username}</Text>
+            <View style={tw('relative bg-green-400 h-3/4 rounded-xl')}>
+              <Image
+                style={tw("absolute h-full w-full rounded-xl")}
+                source={{uri: card.imgUrl}}
+              />
             </View>
             )}
         />

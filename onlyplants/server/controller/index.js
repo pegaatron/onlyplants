@@ -27,7 +27,8 @@ module.exports = {
       water: parseInt(req.body.water),
       sun: parseInt(req.body.sun),
       difficulty: parseInt(req.body.difficulty),
-      imgUrl: req.body.imgUrl
+      imgUrl: req.body.imgUrl,
+      profilePic: req.body.profilePic
     }
 
     model.createPlantCard(plant)

@@ -34,14 +34,14 @@
 			"width": 56
 		}
 	},
-	"h-96": {
+	"h-64": {
 		"style": {
-			"height": 384
+			"height": 256
 		}
 	},
-	"w-96": {
+	"w-64": {
 		"style": {
-			"width": 384
+			"width": 256
 		}
 	},
 	"left-5": {
@@ -200,7 +200,7 @@
 	},
 	"rounded-xl": {
 		"style": {
-			"borderRadius": "0.75rem"
+			"borderRadius": 12
 		}
 	},
 	"justify-between": {
@@ -210,7 +210,7 @@
 	},
 	"bg-green-400": {
 		"style": {
-			"backgroundColor": "rgb(74 222 128)"
+			"backgroundColor": "#9bbb8a"
 		}
 	},
 	"*": {

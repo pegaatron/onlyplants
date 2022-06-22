@@ -42,7 +42,7 @@ const Profile = () => {
         <View>
           <Image source={image}
            resizeMode="cover"
-           style={tw('h-96 w-96 rounded-full')}>
+           style={tw('h-64 w-64 rounded-full')}>
           </Image>
         </View>
         <View style={tw('profile-content')}>

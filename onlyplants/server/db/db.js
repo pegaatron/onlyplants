@@ -1,9 +1,9 @@
 require("dotenv").config();
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/plantr')
-// ,function(){
-//   mongoose.connection.db.dropDatabase();
-// });
+mongoose.connect('mongodb://localhost:27017/plantr'
+,function(){
+  mongoose.connection.db.dropDatabase();
+});
 
 const PlantCardSchema = new mongoose.Schema({
   username: String,
@@ -26,7 +26,8 @@ const PlantCardSchema = new mongoose.Schema({
     min: 1,
     max: 5
   },
-  imgUrl: String
+  imgUrl: String,
+  profilePic: String
 })
 
 const userSchema = new mongoose.Schema({
