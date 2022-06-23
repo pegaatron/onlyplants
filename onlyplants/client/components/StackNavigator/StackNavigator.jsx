@@ -6,6 +6,7 @@ import utilities from '../../../tailwind.json';
 import useAuth from '../../../customHooks/useAuth.jsx';
 import Home from './Home.jsx';
 import Chat from '../Chat/Chat.jsx';
+import Inbox from '../Chat/Inbox.jsx';
 import Profile from '../Profile/Profile.jsx';
 import Swipe from '../Cards/Swipe.jsx';
 import Login from '../Login/Login.jsx';
@@ -28,10 +29,13 @@ const StackNavigator = () => {
         <Stack.Group>
           <Stack.Screen name="Swipe" component={Swipe} />
           <Stack.Screen name="Profile" component={Profile} />
-          <Stack.Screen name="Chat" component={Chat} />
+          <Stack.Group>
+            <Stack.Screen name="Chat" component={Chat} />
+            <Stack.Screen name="Inbox" component={Inbox} />
+          </Stack.Group>
           <Stack.Screen name="Home" component={Home} />
         </Stack.Group>
-        <Stack.Group screenOptions={{presentation: "modal"}}>
+        <Stack.Group screenOptions={{presentation: "transparentModal"}}>
           <Stack.Screen name='Match' component={Match}/>
         </Stack.Group>
         </>

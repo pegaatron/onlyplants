@@ -24,7 +24,7 @@ const Match = () => {
   }, [data])
 
   return ( userInfo && data ?
-    <View style={tw('flex-1 bg-green-200 w-full h-full items-center opacity-80')}>
+    <View style={tw('flex-1 bg-green-200 w-full h-full items-center')}>
       {/* Header */}
       <View style={tw('flex flex-row')}>
         <Image style={tw('h-14 w-14')} source={require('./logo.png')}/>
@@ -33,14 +33,14 @@ const Match = () => {
       {/* MatchText */}
       <View style={tw('relative h-full w-full items-center py-top-10')}>
         <Text style={tw('match-logo')}>Pot it like it's hot!</Text>
-        <Text style={tw('match-logo')}>You and {matchedInfo.username} liked each other's plants</Text>
+        <Text style={tw('match-logo')}>You and {matchedInfo.username} matched</Text>
         {/* UserPlantPhotos */}
         <View style={tw('flex flex-row justify-evenly w-full py-top-10')}>
           <Image
-          style={tw('h-50 w-50 rounded-full px-6 round-border')}
+          style={tw('h-50 w-50 rounded-full px-6')}
           source={{uri: userInfo.imgUrl}}/>
           <Image
-          style={tw('h-50 w-50 rounded-full px-6 round-border')}
+          style={tw('h-50 w-50 rounded-full px-6')}
           source={{uri: matchedInfo.imgUrl}}/>
         </View>
         {/* Chat Button */}

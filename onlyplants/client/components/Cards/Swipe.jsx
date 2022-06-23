@@ -10,8 +10,6 @@ import Config from "react-native-config";
 import axios from 'axios';
 import Modal from './Match.jsx'
 
-
-
 const Swipe = () => {
 
   const navigation = useNavigation();
@@ -48,10 +46,10 @@ const Swipe = () => {
           <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
             <Image style={tw('h-10 w-10 rounded-full')}source={{uri: imgUrl}}/>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Match')}>
+          <TouchableOpacity>
             <Image style={tw('h-14 w-14')} source={require('./logo.png')}/>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Chat')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Inbox')}>
             <Ionicons name="chatbubbles" size={32} color="#9bbb8a" />
           </TouchableOpacity>
         </View>

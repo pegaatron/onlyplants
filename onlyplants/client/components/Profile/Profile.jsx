@@ -1,16 +1,16 @@
 import { React, useEffect, useState, useContext } from 'react';
-import { View, Text, Button, Image } from 'react-native';
+import { View, Text, TouchableOpacity, Image, SafeAreaView, Header } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 import { useTailwind } from 'tailwind-rn';
+import { Entypo } from '@expo/vector-icons';
 import useAxiosGet from '../../../customHooks/useAxiosGet.jsx';
+import useAuth from '../../../customHooks/useAuth.jsx';
 
 // TODO: make sun, water, difficulty divs render out sun icons, water icons, and stars(?)
 const Profile = () => {
-  const user = 'peggy@gmail.com';
+
   const navigation = useNavigation();
   const tw = useTailwind();
-  const image = { uri: "https://images.unsplash.com/photo-1596724878443-2b4069812ff5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80" };
-
   const [about, setAbout] = useState('');
   const [difficulty, setDiff] = useState(0);
   const [water, setWater] = useState(0);
@@ -19,6 +19,7 @@ const Profile = () => {
   const [img, setImg] = useState('');
   const [location, setLoc] = useState('');
   const [plant_type, setType] = useState('');
+  const { user } = useAuth();
   const {data, err, isLoading} = useAxiosGet('/profile', {params: {email:user}, mode:'cors'})
 
 
@@ -36,11 +37,20 @@ const Profile = () => {
   }, [data])
 
   return ( isLoading ?
-    null
-    :<View style={tw('flex flex-one items-center')}>
+    null:
+    data ?
+    <SafeAreaView style={tw('flex flex-one items-center')}>
+      <View style={tw('flex flex-row py-2 w-full px-3')}>
+        <TouchableOpacity
+        style={tw('flex flex-row')}
+        onPress={() => navigation.navigate('Swipe')}>
+          <Entypo name="chevron-left" size={28} color="black" />
+          <Text style={tw('back-text')}>Back</Text>
+        </TouchableOpacity>
+      </View>
       <View style={tw('flex rounded-xl profile-card flex-column items-center bg-white')}>
         <View>
-          <Image source={image}
+          <Image source={img}
            resizeMode="cover"
            style={tw('h-64 w-64 rounded-full')}>
           </Image>
@@ -55,7 +65,8 @@ const Profile = () => {
           <Text style={tw('profile-content')}>Difficulty: {difficulty}</Text>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
+    : null
   )
 }
 

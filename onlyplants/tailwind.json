@@ -319,6 +319,11 @@
 			"justifyContent": "space-between"
 		}
 	},
+	"align-start": {
+		"style": {
+			"alignItems": "flex-start"
+		}
+	},
 	"bg-green-400": {
 		"style": {
 			"backgroundColor": "#9bbb8a"
@@ -335,14 +340,16 @@
 			"fontWeight": "700"
 		}
 	},
-	"opacity-80": {
+	"back-text": {
 		"style": {
-			"opacity": 0.8
+			"color": "black",
+			"fontWeight": "bold",
+			"fontSize": 24
 		}
 	},
 	"chat-btn": {
 		"style": {
-			"background": "#648b50"
+			"backgroundColor": "#648b50"
 		}
 	},
 	"*": {

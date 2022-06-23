@@ -62,14 +62,12 @@ module.exports = {
   // like other plants and store that
   // name1 and name2 will be alphabetically stored
   createLike: (req, res) => {
-    console.log('creating likes')
     let arr = [req.body.name1.toLowerCase(), req.body.name2.toLowerCase()];
     arr.sort();
     let val = {
       name1: arr[0],
       name2: arr[1],
     }
-    console.log(arr)
     model.createLike(val)
     .then(() => {
       console.log('liked a card');
@@ -94,14 +92,12 @@ module.exports = {
   updateMutual: (req, res) => {
     let arr = [req.body.name1.toLowerCase(), req.body.name2.toLowerCase()];
     arr.sort();
-    console.log('updateMutual is running with: ', arr)
     let val = {
       name1: arr[0],
       name2: arr[1],
     }
     model.updateMutual(val)
     .then(() => {
-      console.log('success in updatingMutual');
       res.sendStatus(200)})
     .catch((err) => res.sendStatus(404));
   }
