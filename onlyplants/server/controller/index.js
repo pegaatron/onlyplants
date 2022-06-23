@@ -89,6 +89,26 @@ module.exports = {
     .catch((err) => res.sendStatus(404));
   },
 
+  // get all matches for chat
+  getAllMatches: (req, res) => {
+    let val = req.query.email.toLowerCase();
+    model.getAllMatches(val)
+    .then((data) =>{
+      let result = [];
+      data.forEach((item) => {
+        if (item.name1 === val) {
+          result.push(item.name2)
+        } else {
+          result.push(item.name1)
+        }
+      })
+      res.send(result).status(200)
+    })
+    .catch((err) => res.sendStatus(404));
+  },
+
+
+
   updateMutual: (req, res) => {
     let arr = [req.body.name1.toLowerCase(), req.body.name2.toLowerCase()];
     arr.sort();

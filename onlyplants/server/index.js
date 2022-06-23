@@ -21,6 +21,7 @@ app.get('/plantCard', controller.getPlantCards);
 
 // MATCHES Routes:
 app.get('/match', controller.checkMatch);
+app.get('/allMatches', controller.getAllMatches);
 app.post('/like', controller.createLike);
 app.put('/match', controller.updateMutual);
 

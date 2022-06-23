@@ -31,6 +31,11 @@ module.exports = {
     return db.Match.find(info);
   },
 
+  // get all existing mutual matches
+  getAllMatches: (info) => {
+    return db.Match.find({isMutual: true});
+  },
+
   // UPDATE mutual matching
   updateMutual: (info) => {
     return db.Match.findOneAndUpdate(info, {isMutual: true});

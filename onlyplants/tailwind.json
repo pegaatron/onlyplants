@@ -189,6 +189,12 @@
 			"paddingTop": 4
 		}
 	},
+	"chat-row-div": {
+		"style": {
+			"marginTop": 24,
+			"maginLeft": 24
+		}
+	},
 	"py-1": {
 		"style": {
 			"paddingTop": 4,
@@ -342,7 +348,7 @@
 	},
 	"back-text": {
 		"style": {
-			"color": "black",
+			"color":"#9bbb8a",
 			"fontWeight": "bold",
 			"fontSize": 24
 		}

@@ -43,9 +43,9 @@ const Profile = () => {
       <View style={tw('flex flex-row py-2 w-full px-3')}>
         <TouchableOpacity
         style={tw('flex flex-row')}
-        onPress={() => navigation.navigate('Swipe')}>
-          <Entypo name="chevron-left" size={28} color="black" />
-          <Text style={tw('back-text')}>Back</Text>
+        onPress={() => navigation.goBack()}>
+          <Entypo name="chevron-left" size={28} color="#9bbb8a" />
+          <Text style={tw('back-text')}>Profile</Text>
         </TouchableOpacity>
       </View>
       <View style={tw('flex rounded-xl profile-card flex-column items-center bg-white')}>
