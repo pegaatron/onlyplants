@@ -45,8 +45,18 @@ const LikedCardSchema = new mongoose.Schema({
   }
 })
 
+const ChatLogSchema = new mongoose.Schema({
+  username: String,
+  messageLog: [{
+    author: String,
+    text: String,
+    timestamp: Number
+  }]
+
+})
 const Profile = mongoose.model('Profiles', userSchema);
 const PlantCard = mongoose.model('plantcards', PlantCardSchema);
-const Match = mongoose.model('matches', LikedCardSchema)
+const Match = mongoose.model('matches', LikedCardSchema);
+const ChatLog = mongoose.model('chats', ChatLogSchema);
 
-module.exports = {Profile, Match, PlantCard}
+module.exports = {Profile, Match, PlantCard, ChatLog}

@@ -10,10 +10,10 @@ const Inbox = () => {
   const navigation = useNavigation();
   const tw = useTailwind();
   return (
-    <View style={tw('h-full w-full flex')}>
-      <Header/>
+    <SafeAreaView style={tw('h-full w-full flex')}>
+      <Header title='Chat'/>
       <Chatters/>
-    </View>
+    </SafeAreaView>
   )
 }
 

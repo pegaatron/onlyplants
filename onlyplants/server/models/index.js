@@ -45,20 +45,30 @@ module.exports = {
   deletePlantCards: () => {
     return db.PlantCard.deleteMany({})
   },
+
   // DELETE all matches
   deleteMatches: () => {
     return db.Match.deleteMany({})
   },
+
   // DELETE all profiles
   deleteProfiles: () => {
     return db.Profile.deleteMany({})
-  }
+  },
 
-  // PUT or update information on your plants listed
+  // DELETE all chat
+  deleteChats: () => {
+    return db.ChatLog.deleteMany({})
+  },
 
-  // PUT or update information on your profile
+  // GET chat log from specific chat
+  getChatHistory: (info) => {
+    return db.ChatLog.find({user: info})
+  },
 
-  // DELETE a plant from the listing
-
+  // CREATE chat log or find and update if one already exists
+  findChat: (info) => {
+    return db.ChatLog.findOneAndUpdate({username: info.user}, {$push: {messageLog: info.messageLog}}, { upsert: true })
+  },
 
 }

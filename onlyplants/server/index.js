@@ -26,6 +26,9 @@ app.post('/like', controller.createLike);
 app.put('/match', controller.updateMutual);
 
 // CHAT Routes
+// currently only supports one user
+app.get('/chatHistory', controller.getChatHistory);
+app.post('/chat', controller.postChat);
 
 app.listen(process.env.PORT, () => {
   console.log(`Listening on port: ${process.env.PORT}`);

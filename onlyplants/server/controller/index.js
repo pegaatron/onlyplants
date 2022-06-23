@@ -12,7 +12,7 @@ module.exports = {
     }
 
     model.createUser(profile)
-    .then(() => {console.log('profile created'); res.sendStatus(201)})
+    .then(() => {res.sendStatus(201)})
     .catch((err) => res.sendStatus(400));
   },
 
@@ -32,10 +32,7 @@ module.exports = {
     }
 
     model.createPlantCard(plant)
-    .then(() => {
-      console.log('new plant listing created');
-      res.sendStatus(201)
-      })
+    .then(() => {res.sendStatus(201)})
     .catch((err) => res.sendStatus(404));
   },
 
@@ -69,10 +66,7 @@ module.exports = {
       name2: arr[1],
     }
     model.createLike(val)
-    .then(() => {
-      console.log('liked a card');
-      res.sendStatus(201);
-    })
+    .then(() => {res.sendStatus(201)})
     .catch((err) => console.log(err));
   },
 
@@ -107,8 +101,6 @@ module.exports = {
     .catch((err) => res.sendStatus(404));
   },
 
-
-
   updateMutual: (req, res) => {
     let arr = [req.body.name1.toLowerCase(), req.body.name2.toLowerCase()];
     arr.sort();
@@ -120,6 +112,24 @@ module.exports = {
     .then(() => {
       res.sendStatus(200)})
     .catch((err) => res.sendStatus(404));
+  },
+
+  getChatHistory: (req, res) => {
+    let user = req.body.email || req.params.email || req.query.email || 'null';
+    model.getChatHistory(user)
+    .then((data) => {console.log(data); res.sendStatus(200)})
+    .catch((err) => res.sendStatus(404))
+  },
+
+  postChat: (req, res) => {
+    let user = req.body.user || req.params.user || req.query.user || 'null';
+    let author = req.body.author || req.params.author || req.query.author || 'null';
+    let text = req.body.text || req.params.text || req.query.text || 'null';
+    let timestamp = Date.now();
+
+    model.findChat({user, messageLog: {author, text, timestamp}})
+    .then((data) => res.sendStatus(201))
+    .catch((err) => res.sendStatus(404))
   }
 
 }

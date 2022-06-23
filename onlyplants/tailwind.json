@@ -189,12 +189,25 @@
 			"paddingTop": 4
 		}
 	},
-	"chat-row-div": {
+	"py-top-3": {
 		"style": {
-			"marginTop": 24,
-			"maginLeft": 24
+			"paddingTop": 12
 		}
 	},
+	"chat-row-div": {
+		"style": {
+			"marginTop": 8,
+			"marginBottom": 8,
+			"marginLeft": 40,
+			"marginRight": 40
+		}
+	},
+	"mr-3": {
+		"style": {
+			"marginRight": 12
+		}
+	},
+
 	"py-1": {
 		"style": {
 			"paddingTop": 4,
@@ -205,6 +218,12 @@
 		"style": {
 			"paddingTop": 8,
 			"paddingBottom": 8
+		}
+	},
+	"py-4": {
+		"style": {
+			"paddingTop": 16,
+			"paddingBottom": 16
 		}
 	},
 	"py-top-5": {
@@ -314,6 +333,11 @@
 			"borderRadius": 12
 		}
 	},
+	"rounded-lg": {
+		"style": {
+			"borderRadius": 8
+		}
+	},
 	"rounded-b-xl": {
 		"style": {
 			"borderBottomLeftRadius": 12,
@@ -335,10 +359,27 @@
 			"backgroundColor": "#9bbb8a"
 		}
 	},
+	"text-border": {
+		"style": {
+			"borderWidth": 1,
+			"borderColor": "gray"
+		}
+	},
 	"text-xl": {
 		"style": {
 			"fontSize": 20,
 			"lineHeight": 28
+		}
+	},
+	"text-l": {
+		"style": {
+			"fontSize": 16,
+			"lineHeight": 28
+		}
+	},
+	"text-m": {
+		"style": {
+			"fontSize": 16
 		}
 	},
 	"font-bold": {

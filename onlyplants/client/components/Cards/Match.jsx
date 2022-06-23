@@ -1,10 +1,11 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { View, Text, Image, TouchableOpacity, Button } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Button, SafeAreaView } from 'react-native';
 import useAuth from '../../../customHooks/useAuth.jsx';
 import { useTailwind } from 'tailwind-rn';
 import useAxiosGet from '../../../customHooks/useAxiosGet.jsx';
 import { useNavigation, useRoute } from '@react-navigation/core';
+import { Entypo } from '@expo/vector-icons';
 
 // ideally we pass down the entire card as a prop where we can access
 // cache user information for future matches so you don't always have to send the same axios get request
@@ -15,7 +16,7 @@ const Match = () => {
   const { user } = useAuth();
   const { data } = useAxiosGet('/profile', {params: {email:user}, mode:'cors'});
   const [userInfo, setUserInfo] = useState(null);
-  const { matchedInfo } = params;
+  const matchedInfo = params.matchedInfo
 
   useEffect(() => {
     if (data !== null) {
@@ -24,7 +25,7 @@ const Match = () => {
   }, [data])
 
   return ( userInfo && data ?
-    <View style={tw('flex-1 bg-green-200 w-full h-full items-center')}>
+    <SafeAreaView style={tw('flex-1 bg-green-400 w-full h-full items-center')}>
       {/* Header */}
       <View style={tw('flex flex-row')}>
         <Image style={tw('h-14 w-14')} source={require('./logo.png')}/>
@@ -43,17 +44,25 @@ const Match = () => {
           style={tw('h-50 w-50 rounded-full px-6')}
           source={{uri: matchedInfo.imgUrl}}/>
         </View>
-        {/* Chat Button */}
         <View style={tw('py-top-5')}>
           <View>
-            <Text style={tw('match-logo')}>Send a message</Text>
+            <Text style={tw('match-logo')}>Send a message?</Text>
           </View>
-          <TouchableOpacity style={tw('flex items-center py-top-5')}>
+         {/* Chat Button */}
+          <TouchableOpacity
+          style={tw('flex items-center py-top-3')}
+          onPress={() => navigation.navigate('Inbox')}>
             <Text style={tw('match-logo chat-btn p-3 rounded-xl')}>Chat Now</Text>
+          </TouchableOpacity>
+           {/* Back Button */}
+           <TouchableOpacity
+          style={tw('flex items-center py-top-3')}
+          onPress={() =>  navigation.navigate('Swipe')}>
+            <Text style={tw('match-logo chat-btn p-3 rounded-xl')}>Later</Text>
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
     : null
   )
 }

@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, SafeAreaView, StyleSheet, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 import { useTailwind } from 'tailwind-rn';
 import { Entypo } from '@expo/vector-icons';
@@ -30,22 +30,36 @@ const Chatters = () => {
     }
   }, [data])
 
-  return ( matches ?
+  return ( data ?
     matches.length > 0 ?
-    <View style={tw('flex h-full w-full')}>
+    <SafeAreaView style={tw('flex h-full')}>
       {matches.map((item, key) => (
-        <View key={key}>
-          <TouchableOpacity>
-            <Text>{item.username}</Text>
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity
+        key={key}
+        style={[tw('flex-row bg-white py-2 px-5 chat-row-div rounded-lg'), styles]}
+        onPress={() => navigation.navigate('Chat', { item })}>
+          <Image source={{uri: item.imgUrl}} style={tw('rounded-full h-16 w-16 mr-3')}/>
+          <View>
+            <Text style={tw('font-semibold py-top-1 text-m')}>{item.username}</Text>
+            <Text style={tw('py-top-1')}>Say Hi!</Text>
+          </View>
+        </TouchableOpacity>
       ))}
-    </View>
+    </SafeAreaView>
     : <View style={tw('flex h-full w-full justify-center items-center')}>
-        <Text>Hey Chatters</Text>
+        <Text>No matches yet.</Text>
       </View>
     : null
   )
 }
 
 export default Chatters
+
+const styles = StyleSheet.create({
+  boxWithShadow: {
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.4,
+}
+})
