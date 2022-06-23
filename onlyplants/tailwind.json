@@ -26,7 +26,7 @@
 	},
 	"h-50": {
 		"style": {
-			"height": 200
+			"height": 180
 		}
 	},
 	"w-10": {
@@ -61,7 +61,7 @@
 	},
 	"w-50": {
 		"style": {
-			"width": 200
+			"width": 180
 		}
 	},
 	"w-64": {
@@ -222,8 +222,7 @@
 			"paddingTop": 10,
 			"color": "white",
 			"fontWeight": "bold",
-			"fontSize": "xx-large",
-			"textShadow": "2px"
+			"fontSize": 24
 		}
 	},
 	"pt-12": {
@@ -343,7 +342,6 @@
 	},
 	"chat-btn": {
 		"style": {
-			"border": "solid white",
 			"background": "#648b50"
 		}
 	},

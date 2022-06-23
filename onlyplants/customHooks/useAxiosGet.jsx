@@ -16,7 +16,6 @@ function useAxiosGet(endpoint, params) {
   }
 
   useEffect(() => {
-    console.log('running with endpoint: ', endpoint)
     fetchData(endpoint, params);
   },[endpoint])
 

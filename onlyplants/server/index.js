@@ -22,6 +22,9 @@ app.get('/plantCard', controller.getPlantCards);
 // MATCHES Routes:
 app.get('/match', controller.checkMatch);
 app.post('/like', controller.createLike);
+app.put('/match', controller.updateMutual);
+
+// CHAT Routes
 
 app.listen(process.env.PORT, () => {
   console.log(`Listening on port: ${process.env.PORT}`);

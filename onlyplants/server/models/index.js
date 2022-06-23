@@ -31,6 +31,11 @@ module.exports = {
     return db.Match.find(info);
   },
 
+  // UPDATE mutual matching
+  updateMutual: (info) => {
+    return db.Match.findOneAndUpdate(info, {isMutual: true});
+  },
+
   // DELETE all plantCards
   deletePlantCards: () => {
     return db.PlantCard.deleteMany({})

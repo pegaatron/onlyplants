@@ -17,8 +17,9 @@ export const AuthProvider = ({children}) => {
 
   return (
     <AuthContext.Provider value={{
-      user: 'peggy@gmail.com',
-      imgUrl: "https://images.unsplash.com/photo-1593529467220-9d721ceb9a78?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=730&q=80"
+      user: 'z@gmail.com',
+      imgUrl: "https://images.unsplash.com/photo-1593529467220-9d721ceb9a78?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=730&q=80",
+      url: 'http://localhost:3001'
     }}>
       {children}
     </AuthContext.Provider>

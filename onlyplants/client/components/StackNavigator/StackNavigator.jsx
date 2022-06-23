@@ -25,14 +25,14 @@ const StackNavigator = () => {
       }}>
         {user ?
         <>
-        <Stack.Group screenOptions={{presentation: "modal"}}>
-          <Stack.Screen name='Modal' component={Modal}/>
-        </Stack.Group>
         <Stack.Group>
           <Stack.Screen name="Swipe" component={Swipe} />
           <Stack.Screen name="Profile" component={Profile} />
           <Stack.Screen name="Chat" component={Chat} />
           <Stack.Screen name="Home" component={Home} />
+        </Stack.Group>
+        <Stack.Group screenOptions={{presentation: "modal"}}>
+          <Stack.Screen name='Modal' component={Modal}/>
         </Stack.Group>
         </>
         :<Stack.Screen name="Login" component={Login} />

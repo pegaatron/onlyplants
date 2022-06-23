@@ -62,10 +62,14 @@ module.exports = {
   // like other plants and store that
   // name1 and name2 will be alphabetically stored
   createLike: (req, res) => {
+    console.log('creating likes')
+    let arr = [req.body.name1.toLowerCase(), req.body.name2.toLowerCase()];
+    arr.sort();
     let val = {
-      name1: req.body.name1.toLowerCase(),
-      name2: req.body.name2.toLowerCase(),
+      name1: arr[0],
+      name2: arr[1],
     }
+    console.log(arr)
     model.createLike(val)
     .then(() => {
       console.log('liked a card');
@@ -76,12 +80,29 @@ module.exports = {
 
   // See Matches
   checkMatch: (req, res) => {
+    let arr = [req.query.name1.toLowerCase(), req.query.name2.toLowerCase()];
+    arr.sort();
     let val = {
-      name1: req.body.name1,
-      name2: req.body.name2,
-    };
+      name1: arr[0],
+      name2: arr[1],
+    }
     model.checkMatch(val)
     .then((data) => res.send(data).status(200))
+    .catch((err) => res.sendStatus(404));
+  },
+
+  updateMutual: (req, res) => {
+    let arr = [req.body.name1.toLowerCase(), req.body.name2.toLowerCase()];
+    arr.sort();
+    console.log('updateMutual is running with: ', arr)
+    let val = {
+      name1: arr[0],
+      name2: arr[1],
+    }
+    model.updateMutual(val)
+    .then(() => {
+      console.log('success in updatingMutual');
+      res.sendStatus(200)})
     .catch((err) => res.sendStatus(404));
   }
 

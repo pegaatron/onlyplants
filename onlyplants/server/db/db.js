@@ -38,7 +38,11 @@ const userSchema = new mongoose.Schema({
 
 const LikedCardSchema = new mongoose.Schema({
   name1: String,
-  name2: String
+  name2: String,
+  isMutual: {
+    type: Boolean,
+    default: false
+  }
 })
 
 const Profile = mongoose.model('Profiles', userSchema);
