@@ -115,9 +115,10 @@ module.exports = {
   },
 
   getChatHistory: (req, res) => {
-    let user = req.body.email || req.params.email || req.query.email || 'null';
+    let user = req.body.user || req.params.user || req.query.user || 'null';
+    console.log(user)
     model.getChatHistory(user)
-    .then((data) => {console.log(data); res.sendStatus(200)})
+    .then((data) => {res.send(data).status(200) })
     .catch((err) => res.sendStatus(404))
   },
 
@@ -126,7 +127,6 @@ module.exports = {
     let author = req.body.author || req.params.author || req.query.author || 'null';
     let text = req.body.text || req.params.text || req.query.text || 'null';
     let timestamp = Date.now();
-
     model.findChat({user, messageLog: {author, text, timestamp}})
     .then((data) => res.sendStatus(201))
     .catch((err) => res.sendStatus(404))

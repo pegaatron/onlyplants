@@ -63,7 +63,7 @@ module.exports = {
 
   // GET chat log from specific chat
   getChatHistory: (info) => {
-    return db.ChatLog.find({user: info})
+    return db.ChatLog.find({username: info})
   },
 
   // CREATE chat log or find and update if one already exists

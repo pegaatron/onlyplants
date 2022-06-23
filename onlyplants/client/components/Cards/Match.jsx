@@ -16,7 +16,7 @@ const Match = () => {
   const { user } = useAuth();
   const { data } = useAxiosGet('/profile', {params: {email:user}, mode:'cors'});
   const [userInfo, setUserInfo] = useState(null);
-  const matchedInfo = params.matchedInfo
+  const matchedInfo = params.matchedInfo;
 
   useEffect(() => {
     if (data !== null) {

@@ -4,9 +4,19 @@
 			"height": "100%"
 		}
 	},
+	"h-8": {
+		"style": {
+			"height": 32
+		}
+	},
 	"h-10": {
 		"style": {
 			"height": 40
+		}
+	},
+	"h-12": {
+		"style": {
+			"height": 48
 		}
 	},
 	"h-16": {
@@ -29,9 +39,19 @@
 			"height": 180
 		}
 	},
+	"w-8": {
+		"style": {
+			"width": 32
+		}
+	},
 	"w-10": {
 		"style": {
 			"width": 40
+		}
+	},
+	"w-12": {
+		"style": {
+			"width": 48
 		}
 	},
 	"w-full": {
@@ -116,11 +136,17 @@
 			"justifyContent": "space-around"
 		}
 	},
+	"justify-end": {
+		"style": {
+			"justifyContent": "flex-end"
+		}
+	},
 	"items-center": {
 		"style": {
 			"alignItems": "center"
 		}
 	},
+
 	"round-border": {
 		"style": {
 			"border": "solid white"
@@ -189,11 +215,35 @@
 			"paddingTop": 4
 		}
 	},
+	"py-3": {
+		"style": {
+			"paddingTop": 12,
+			"paddingBottom": 12
+		}
+	},
 	"py-top-3": {
 		"style": {
 			"paddingTop": 12
 		}
 	},
+	"mx-3": {
+		"style": {
+			"marginLeft": 12,
+			"marginRight": 12
+		}
+	},
+	"my-2": {
+		"style": {
+			"marginTop": 8,
+			"marginBottom": 8
+		}
+	},
+	"my-bot-2": {
+		"style": {
+			"marginBottom": 8
+		}
+	},
+
 	"chat-row-div": {
 		"style": {
 			"marginTop": 8,
@@ -253,6 +303,11 @@
 	"pt-12": {
 		"style": {
 			"paddingTop": 48
+		}
+	},
+	"-left-14": {
+		"style": {
+			"left": -14
 		}
 	},
 	"font-semibold": {

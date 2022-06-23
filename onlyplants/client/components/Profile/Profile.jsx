@@ -50,7 +50,7 @@ const Profile = () => {
       </View>
       <View style={tw('flex rounded-xl profile-card flex-column items-center bg-white')}>
         <View>
-          <Image source={img}
+          <Image source={{uri: img}}
            resizeMode="cover"
            style={tw('h-64 w-64 rounded-full')}>
           </Image>

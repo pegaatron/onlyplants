@@ -52,7 +52,6 @@ const ChatLogSchema = new mongoose.Schema({
     text: String,
     timestamp: Number
   }]
-
 })
 const Profile = mongoose.model('Profiles', userSchema);
 const PlantCard = mongoose.model('plantcards', PlantCardSchema);
