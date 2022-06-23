@@ -116,9 +116,10 @@ module.exports = {
 
   getChatHistory: (req, res) => {
     let user = req.body.user || req.params.user || req.query.user || 'null';
-    console.log(user)
     model.getChatHistory(user)
-    .then((data) => {res.send(data).status(200) })
+    .then((data) => {
+      res.send(data).status(200)
+     })
     .catch((err) => res.sendStatus(404))
   },
 

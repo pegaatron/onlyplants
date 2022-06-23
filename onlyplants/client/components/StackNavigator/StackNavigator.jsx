@@ -27,13 +27,13 @@ const StackNavigator = () => {
         {user ?
         <>
         <Stack.Group>
-          <Stack.Screen name="Inbox" component={Inbox} />
-          <Stack.Screen name="Chat" component={Chat} />
-        </Stack.Group>
-        <Stack.Group>
           <Stack.Screen name="Swipe" component={Swipe} />
           <Stack.Screen name="Profile" component={Profile} />
           <Stack.Screen name="Home" component={Home} />
+        </Stack.Group>
+        <Stack.Group>
+          <Stack.Screen name="Inbox" component={Inbox} />
+          <Stack.Screen name="Chat" component={Chat} />
         </Stack.Group>
         <Stack.Group screenOptions={{presentation: "transparentModal"}}>
           <Stack.Screen name='Match' component={Match}/>

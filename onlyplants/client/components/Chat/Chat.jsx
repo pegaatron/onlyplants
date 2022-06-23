@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import {
   SafeAreaView,
   View,
@@ -30,8 +30,6 @@ const Chat = () => {
   const chatterInfo = params.item;
   const [msgs, setMsgs] = useState([]);
 
-  // post request to chat db to post new message
-  // get request to render your response
   const sendMessage = () => {
     let info = {
       user: chatterInfo.username,
@@ -39,12 +37,25 @@ const Chat = () => {
       text: input
     };
     axios.post(`${url}/chat`, info)
-    .then(() => console.log('success'))
+    .then(() => getNewChatLog())
+    .catch((err) => console.log(err))
+
+    setInput('');
+  };
+
+  useEffect(() => {
+    console.log(msgs)
+    getNewChatLog()
+  }, [])
+  // everytime you switch chat rooms, get request to the db for new user you're talking to
+  const getNewChatLog = () => {
+    axios.get(`${url}/chatHistory`, {params: {user:chatterInfo.username}, mode:'cors'})
+    .then((data) => {
+      setMsgs(data.data[0].messageLog)
+    })
     .catch((err) => console.log(err))
   };
 
-  // everytime you switch chat rooms, get request to the db for new user you're talking to
-  const getNewChatLog = () => {};
   return (
     <SafeAreaView style={tw('h-full flex-1 justify-end')}>
       <Header title={params.item.username}/>
@@ -53,7 +64,7 @@ const Chat = () => {
       style={tw('flex-1')}
       keyboardVerticalOffset={10}
       >
-        {
+        {msgs ?
           msgs.length > 0 ?
           <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View>
@@ -64,6 +75,7 @@ const Chat = () => {
               ))}
             </View>
           </TouchableWithoutFeedback>
+          : null
           : null
         }
           <View
