@@ -8,7 +8,7 @@ import { Ionicons, Entypo,  } from '@expo/vector-icons';
 import Swiper from 'react-native-deck-swiper';
 import Config from "react-native-config";
 import axios from 'axios';
-import Modal from './Modal.jsx'
+import Modal from './Match.jsx'
 
 
 
@@ -21,13 +21,15 @@ const Swipe = () => {
   // some logout function from useAuth
 
   const handleRightSwipe = async (cardIndex) => {
-    let headerInfo = {params: {name1: user, name2: data[cardIndex].email, mode:'cors'}};
-    let isMutual = false;
+    let headerInfo = {params: {name1: user, name2: data[cardIndex].email, userData: data[cardIndex], mode:'cors'}};
     axios.get(`${url}/match`, headerInfo)
     .then((data) => {
       if (data.data.length > 0) {
-        console.log('hurrah')
-        axios.put(`${url}/match`, {name1: headerInfo.params.name1, name2: headerInfo.params.name2})
+        axios.put(`${url}/match`, {name1: headerInfo.params.name1, name2: headerInfo.params.name2, data: headerInfo.params.data})
+        .then(() => {
+          let matchedInfo = headerInfo.params.userData;
+          navigation.navigate('Match', { matchedInfo })
+      })
         .catch((err) => console.log(err))
       } else {
         axios.post(`${url}/like`, {name1: headerInfo.params.name1, name2: headerInfo.params.name2})
@@ -35,11 +37,6 @@ const Swipe = () => {
       }
     })
     .catch((err) => console.log(err))
-
-    // axios.get('/match', {params: {name1: user.email, name2: card.email}})
-    // get request to see if this user matched me yet
-    // if data ! null, display matched screen
-    // else post request to add match to the system
   }
   return ( err ?
     null
@@ -51,7 +48,7 @@ const Swipe = () => {
           <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
             <Image style={tw('h-10 w-10 rounded-full')}source={{uri: imgUrl}}/>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Modal')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Match')}>
             <Image style={tw('h-14 w-14')} source={require('./logo.png')}/>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Chat')}>

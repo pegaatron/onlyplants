@@ -16,7 +16,7 @@ const Home = () => {
       <Text>Home Screen</Text>
       <Button
       title='See Profile'
-      onPress={() =>{console.log('clicked profiles'); navigation.navigate('Profile')}}
+      onPress={() => navigation.navigate('Profile')}
       />
       <Button
       title='See Swipes'

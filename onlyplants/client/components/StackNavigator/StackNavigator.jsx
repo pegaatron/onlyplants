@@ -9,7 +9,7 @@ import Chat from '../Chat/Chat.jsx';
 import Profile from '../Profile/Profile.jsx';
 import Swipe from '../Cards/Swipe.jsx';
 import Login from '../Login/Login.jsx';
-import Modal from '../Cards/Modal.jsx';
+import Match from '../Cards/Match.jsx';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,7 +32,7 @@ const StackNavigator = () => {
           <Stack.Screen name="Home" component={Home} />
         </Stack.Group>
         <Stack.Group screenOptions={{presentation: "modal"}}>
-          <Stack.Screen name='Modal' component={Modal}/>
+          <Stack.Screen name='Match' component={Match}/>
         </Stack.Group>
         </>
         :<Stack.Screen name="Login" component={Login} />
