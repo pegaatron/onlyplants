@@ -44,7 +44,6 @@ const Chat = () => {
   };
 
   useEffect(() => {
-    console.log(msgs)
     getNewChatLog()
   }, [])
   // everytime you switch chat rooms, get request to the db for new user you're talking to

@@ -57,7 +57,7 @@ const Match = () => {
            {/* Back Button */}
            <TouchableOpacity
           style={tw('flex items-center py-top-3')}
-          onPress={() =>  navigation.navigate('Swipe')}>
+          onPress={() => navigation.navigate('Swipe')}>
             <Text style={tw('match-logo chat-btn p-3 rounded-xl')}>Later</Text>
           </TouchableOpacity>
         </View>
