@@ -5,7 +5,7 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 
 ## Background
-OnlyPlants is a responsive IOS based application created for the plant owner/gardener communities to trade propagations/seeds with one another to expand their plant collections. Implemented with swiping functionlaity to enable users to peruse through a stack of avaialble plants.
+OnlyPlants is a responsive IOS based application created for the plant owner/garden community to trade propagations/seeds with one another to expand their plant collections. Implemented with swiping functionlaity to enable users to peruse through a stack of avaialble plants.
 
 ## Demo
 ### View your profile
